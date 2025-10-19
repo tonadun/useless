@@ -6,6 +6,11 @@ A ChatGPT App built with MCP (Model Context Protocol) and Apps SDK featuring cus
 ![MCP](https://img.shields.io/badge/MCP-2024--11--05-green)
 ![Apps SDK](https://img.shields.io/badge/Apps%20SDK-Custom%20UX-orange)
 
+# Example
+
+<img width="819" height="881" alt="useless_in_action" src="https://github.com/user-attachments/assets/8e11c3f7-75a5-4d80-9aa2-d7d575923aea" />
+
+
 ## 🎯 Overview
 
 **Useless** teaches you "useless" but fascinating skills from various professions - from changing oil in jet engines to measuring building sites like an architect. Each learning card is displayed in a custom red/orange branded UI component that renders directly in ChatGPT.
