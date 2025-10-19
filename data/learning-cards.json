@@ -1,0 +1,129 @@
+{
+  "cards": [
+    {
+      "id": "aircraft-oil-change",
+      "title": "How Aircraft Engineers Change Engine Oil",
+      "description": "Learn the meticulous process aircraft engineers follow to change oil in jet engines, ensuring safety and optimal performance.",
+      "category": "Maintenance & Safety",
+      "occupation": "Aircraft Engineer",
+      "image": "https://images.unsplash.com/photo-1540962351504-03099e0a754b",
+      "steps": [
+        "Review the Aircraft Maintenance Manual (AMM) for specific procedures and oil specifications",
+        "Perform safety lockout/tagout procedures to ensure the engine cannot be started",
+        "Position the aircraft over a drip pan or oil collection system to catch waste oil",
+        "Remove the oil drain plug and allow the oil to drain completely (usually 30-45 minutes)",
+        "Inspect the drained oil for metal particles or contamination that might indicate engine problems",
+        "Replace the drain plug with a new crush washer and torque to specification (typically 25-35 ft-lbs)",
+        "Remove and inspect the oil filter, checking for metal particles",
+        "Install a new oil filter and safety wire it according to regulations",
+        "Add the specified type and quantity of aviation-grade oil (turbine engines typically use MIL-PRF-23699 synthetic oil)",
+        "Check oil level using the dipstick or sight gauge",
+        "Run the engine at idle for a leak check",
+        "Document the oil change in the aircraft logbook with date, oil type, quantity, and mechanic signature"
+      ],
+      "funFact": "A typical commercial jet engine holds 5-8 gallons of oil, but unlike your car, it's normal for aircraft engines to consume some oil during operation. That's why pilots check oil levels before every flight!",
+      "keyTakeaway": "Aircraft maintenance requires extreme precision and documentation. Every step is verified, double-checked, and recorded because lives depend on it."
+    },
+    {
+      "id": "chef-knife-skills",
+      "title": "How Professional Chefs Master Knife Skills",
+      "description": "Discover the fundamental knife techniques that professional chefs use daily to work efficiently and safely in the kitchen.",
+      "category": "Culinary Arts",
+      "occupation": "Professional Chef",
+      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136",
+      "steps": [
+        "Select the right knife: Chef's knife (8-10 inches) for most tasks, paring knife for detail work",
+        "Hold the knife with a pinch grip: thumb and index finger grip the blade, other fingers wrap the handle",
+        "Create a claw grip with your non-knife hand: fingertips curl back, knuckles guide the blade",
+        "Master the rocking motion: keep the knife tip on the cutting board, rock the blade up and down",
+        "Learn the cross-chop technique: for herbs, use one hand on the knife handle, other on the spine",
+        "Practice the julienne cut: square off the vegetable, cut into thin planks, stack and cut into matchsticks",
+        "Perfect the brunoise: take julienned pieces and dice into 1-2mm cubes",
+        "Develop consistent sizing: uniform cuts ensure even cooking times",
+        "Maintain your knife: hone before each use with a steel, sharpen regularly with a whetstone",
+        "Keep your cutting board stable: place a damp towel underneath to prevent slipping",
+        "Clean and store properly: wash by hand immediately, store in a knife block or magnetic strip"
+      ],
+      "funFact": "Professional chefs spend years perfecting their knife skills. In culinary school, students often practice cutting hundreds of onions before they're satisfied with their technique!",
+      "keyTakeaway": "Knife skills aren't just about speed - they're about safety, consistency, and efficiency. Proper technique prevents injury and makes cooking more enjoyable."
+    },
+    {
+      "id": "architect-site-measurement",
+      "title": "How Architects Measure Building Sites",
+      "description": "Learn the systematic approach architects use to accurately survey and measure construction sites before designing buildings.",
+      "category": "Design & Planning",
+      "occupation": "Architect",
+      "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+      "steps": [
+        "Obtain existing site surveys and property documents from the local authority",
+        "Visit the site with essential tools: laser distance meter, measuring tape, clipboard, camera, and digital tablet",
+        "Create a rough sketch of the site boundaries and mark north direction using a compass",
+        "Measure the site perimeter using a laser distance meter for accuracy (within 1-2mm)",
+        "Mark and measure setback lines - the required distance from property boundaries",
+        "Document existing features: trees, utility poles, manholes, drainage, elevation changes",
+        "Take elevation readings at multiple points using a digital level or theodolite",
+        "Photograph the site from all angles, including views from neighboring properties",
+        "Note surrounding context: neighboring buildings, street widths, parking, traffic patterns",
+        "Measure and document sun angles and shadow patterns at different times of day",
+        "Record underground utility locations (water, gas, electric, sewage) from utility companies",
+        "Create a scaled site plan drawing back at the office, typically at 1:100 or 1:200 scale",
+        "Verify all measurements against official cadastral surveys",
+        "Conduct a site analysis report noting opportunities and constraints"
+      ],
+      "funFact": "Modern architects often use drones and 3D laser scanning technology to create precise digital models of existing sites, but the fundamental skills of measuring and observation remain essential.",
+      "keyTakeaway": "Architecture begins with careful observation and measurement. Understanding a site's constraints and opportunities shapes the entire design process."
+    },
+    {
+      "id": "electrician-circuit-troubleshooting",
+      "title": "How Electricians Troubleshoot Circuit Problems",
+      "description": "Understand the systematic approach electricians use to safely diagnose and fix electrical circuit issues.",
+      "category": "Technical Troubleshooting",
+      "occupation": "Electrician",
+      "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e",
+      "steps": [
+        "First rule: SAFETY - Turn off power at the circuit breaker and verify it's off with a voltage tester",
+        "Gather information: Ask when the problem started and what was happening at the time",
+        "Identify the symptoms: complete loss of power, intermittent issues, or specific outlets affected",
+        "Check the obvious: Inspect the circuit breaker for tripping, look for GFCI reset buttons",
+        "Use a non-contact voltage tester to confirm power is truly off before touching anything",
+        "Visually inspect outlets and switches for burn marks, loose connections, or damage",
+        "Use a multimeter to test voltage: should read 120V for standard US outlets, 0V when off",
+        "Check continuity: with power OFF, test if the circuit path is complete from breaker to outlet",
+        "Inspect wire connections in junction boxes for loose or corroded connections",
+        "Test individual components: outlets, switches, and light fixtures may need replacement",
+        "Look for overloaded circuits: too many devices on one circuit can cause repeated tripping",
+        "Check for ground faults: wet areas, damaged insulation, or rodent damage can cause problems",
+        "Once the issue is identified and fixed, restore power and test thoroughly",
+        "Document the problem and solution for future reference"
+      ],
+      "funFact": "Electricians follow a logical troubleshooting flow because electricity is invisible. They rely on tools and systematic testing rather than guessing, which saves time and prevents dangerous mistakes.",
+      "keyTakeaway": "Systematic troubleshooting beats random trial-and-error. This approach applies to solving problems in any technical field - gather information, test methodically, and verify your solution."
+    },
+    {
+      "id": "paramedic-patient-assessment",
+      "title": "How Paramedics Perform Rapid Patient Assessment",
+      "description": "Learn the life-saving systematic approach paramedics use to assess patients in emergency situations.",
+      "category": "Emergency Response",
+      "occupation": "Paramedic",
+      "image": "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc",
+      "steps": [
+        "Scene safety first: Ensure the environment is safe for both patient and responders",
+        "Initial impression: Observe patient from a distance - alert, responsive, breathing, obvious injuries?",
+        "Introduce yourself and ask for consent to help (if patient is conscious)",
+        "Check responsiveness: 'Can you hear me? What's your name?' - note level of consciousness",
+        "Airway: Is it clear and open? Look for obstructions, listen for abnormal sounds",
+        "Breathing: Count respiratory rate (normal: 12-20 breaths/min), observe chest rise, listen to breath sounds",
+        "Circulation: Check pulse rate and quality, look for signs of bleeding, assess skin color and temperature",
+        "Disability: Quickly assess neurological status using AVPU scale (Alert, Verbal, Pain, Unresponsive)",
+        "Exposure: Check for injuries, but maintain patient dignity and prevent hypothermia",
+        "Take vital signs: blood pressure, pulse, respiratory rate, oxygen saturation, temperature",
+        "SAMPLE history: Symptoms, Allergies, Medications, Past medical history, Last meal, Events leading to injury",
+        "Focused examination: Based on chief complaint, examine specific body systems in detail",
+        "Make treatment decisions: stabilize life-threatening conditions first, then address other issues",
+        "Continuous monitoring: Reassess vital signs regularly during transport to hospital"
+      ],
+      "funFact": "Paramedics can perform this entire assessment in under 60 seconds in critical situations. The ABC approach (Airway, Breathing, Circulation) is used worldwide because it prioritizes the most life-threatening issues first.",
+      "keyTakeaway": "Having a systematic process is crucial when under pressure. The same principle applies in any high-stakes situation - follow your checklist, prioritize critical items, and don't skip steps even when rushed."
+    }
+  ]
+}
