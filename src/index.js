@@ -43,60 +43,27 @@ async function loadComponentBundle() {
 function handleToolCall(toolName, args) {
   switch (toolName) {
     case 'get_learning_card': {
-      let matchedCard = null;
+      // Get 3 random unique cards
+      const shuffled = [...learningCards.cards].sort(() => 0.5 - Math.random());
+      const selectedCards = shuffled.slice(0, 3);
 
-      if (args?.id) {
-        matchedCard = learningCards.cards.find(card => card.id === args.id);
-      } else if (args?.occupation) {
-        matchedCard = learningCards.cards.find(
-          card => card.occupation.toLowerCase() === args.occupation.toLowerCase()
-        );
-      } else if (args?.category) {
-        matchedCard = learningCards.cards.find(
-          card => card.category.toLowerCase() === args.category.toLowerCase()
-        );
-      } else {
-        // Return a random card if no filters specified
-        const randomIndex = Math.floor(Math.random() * learningCards.cards.length);
-        matchedCard = learningCards.cards[randomIndex];
-      }
+      // Format all cards as text for fallback
+      const formattedCards = selectedCards.map(card => `
+# 🔥 ${card.title}
 
-      if (!matchedCard) {
-        return {
-          content: [
-            {
-              type: 'text',
-              text: 'No learning card found matching your criteria. Try using list_all_cards to see available options.',
-            },
-          ],
-        };
-      }
+> **${card.occupation}** | ${card.category}
 
-      // Format the card as rich branded content
-      const formattedCard = `
-# 🔥 ${matchedCard.title}
-
-> **${matchedCard.occupation}** | ${matchedCard.category}
-
-${matchedCard.description}
-
----
+${card.description}
 
 ## 📋 Steps
+${card.steps.map((step, index) => `${index + 1}. ${step}`).join('\n')}
 
-${matchedCard.steps.map((step, index) => `**${index + 1}.** ${step}`).join('\n\n')}
+💡 **Fun Fact:** ${card.funFact}
 
----
+🎯 **Key Takeaway:** ${card.keyTakeaway}
+`).join('\n---\n\n');
 
-### 💡 **Fun Fact**
-> ${matchedCard.funFact}
-
-### 🎯 **Key Takeaway**
-> ${matchedCard.keyTakeaway}
-
----
-*Learn something new, even if it's useless!* 🚀
-`;
+      const fullText = `${formattedCards}\n\n*Learn something new, even if it's useless!* 🚀`;
 
       // Build response following Apps SDK format
       // structuredContent is passed to window.openai.toolOutput for the component
@@ -104,11 +71,11 @@ ${matchedCard.steps.map((step, index) => `**${index + 1}.** ${step}`).join('\n\n
         content: [
           {
             type: 'text',
-            text: formattedCard,
+            text: fullText,
           },
         ],
         structuredContent: {
-          card: matchedCard,
+          cards: selectedCards,
         },
       };
     }
@@ -193,28 +160,36 @@ ${matchedCards.map(card => `
   }
 }
 
-// Start HTTP server
-async function main() {
-  await loadLearningCards();
-  await loadComponentBundle();
+// Create Express app
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
+// Initialize data on startup
+let initialized = false;
+async function ensureInitialized() {
+  if (!initialized) {
+    await loadLearningCards();
+    await loadComponentBundle();
+    initialized = true;
+  }
+}
 
-  // Health check endpoint
-  app.get('/', (req, res) => {
-    res.json({
-      name: 'Useless - Cross-Occupational Learning MCP Server',
-      version: '1.0.0',
-      status: 'running',
-      cards: learningCards.cards.length,
-      endpoint: '/mcp',
-    });
+// Health check endpoint
+app.get('/', async (req, res) => {
+  await ensureInitialized();
+  res.json({
+    name: 'Useless - Cross-Occupational Learning MCP Server',
+    version: '1.0.0',
+    status: 'running',
+    cards: learningCards.cards.length,
+    endpoint: '/mcp',
   });
+});
 
-  // MCP endpoint - POST only for proper MCP protocol
-  app.post('/mcp', async (req, res) => {
+// MCP endpoint - POST only for proper MCP protocol
+app.post('/mcp', async (req, res) => {
+  await ensureInitialized();
     try {
       const request = req.body;
       console.log('MCP request:', request.method);
@@ -400,6 +375,8 @@ async function main() {
     }
   });
 
+// For local development
+if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Useless MCP Server running on http://0.0.0.0:${PORT}`);
     console.log(`MCP endpoint available at http://0.0.0.0:${PORT}/mcp`);
@@ -407,7 +384,5 @@ async function main() {
   });
 }
 
-main().catch((error) => {
-  console.error('Server error:', error);
-  process.exit(1);
-});
+// Export for Vercel
+export default app;
